@@ -15,7 +15,7 @@ export class ProductDetailsModalComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.productService.getProduct(this.productId);
+    this.productService.fetchProduct(this.productId);
     this.productService.productsSelected
             .subscribe(
               (product: Product) => {

@@ -14,24 +14,28 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) {}
 
+  /** Fetch all the products from REST api using HTTPClient GET */
   fetchProducts() {
     this.httpClient
     .get<{products: Product[]}>('http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/list')
     .subscribe(data => this.setProducts(data.products));
   }
 
-  getProduct(productId: string) {
+  /** Fetch a product with a specific id from REST api using HTTPClient GET */
+  fetchProduct(productId: string) {
     this.httpClient
     .get<Product>('http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/' + productId + '/detail')
     .subscribe(data => this.setProduct(data));
   }
 
-  setProducts(products: Product[]) {
+  /** Helper function to fetch the products, store them temporalily and notify the components using it */
+  private setProducts(products: Product[]) {
     this.products = products;
     this.productsChanged.next([...this.products]);
   }
 
-  setProduct(product: Product) {
+  /** Helper function to store the product, store it temporalily and notify the components using it */
+  private setProduct(product: Product) {
     this.selectedProduct = product;
     this.productsSelected.next(this.selectedProduct);
   }
