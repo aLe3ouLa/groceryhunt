@@ -1,34 +1,30 @@
 <div class="modal">
-
   <div class="modal__card">
     <div class="modal__card--header">
       <h2>Product Details</h2>
-      <a (click)="onClose()">Close</a>
+      <a class="modal__card--link" (click)="onClose()">Close</a>
     </div>
-    <hr>
-
-    <div class="product-details" *ngIf="productSelected">
-      <div class="product-image">
-        <img src="{{productSelected.image}}" alt="{{productSelected.name + 'image'}}" height="200">
+    <hr />
+    <div class="modal__product" *ngIf="productSelected">
+      <div class="modal__product--image">
+        <img src="{{ productSelected.image }}" alt="{{ productSelected.name + 'image' }}" height="200" />
       </div>
-      <div class="product-details-description">
-          <div class="product-title">
-              {{productSelected.name}}
-          </div>
+      <div class="modal__product-details">
+        <div class="modal__product-details--title">
+          {{ productSelected.name }}
+        </div>
 
-          <div class="product-price">
-            {{productSelected.price}} &euro;
-          </div>
-      </div>
-
-      <div class="product-description">
-        <h3>Description</h3>
-        <div>
-          {{productSelected.description}}
+        <div class="modal__product-details--price">
+          {{ productSelected.price }} &euro;
         </div>
       </div>
 
+      <div class="modal__product--description">
+        <h3>Description</h3>
+        <div>
+          {{ productSelected.description }}
+        </div>
+      </div>
     </div>
   </div>
-
 </div>

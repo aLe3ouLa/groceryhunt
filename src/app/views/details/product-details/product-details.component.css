@@ -1,0 +1,37 @@
+.product {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px #aaa;
+}
+
+.product--image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product__details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.product__details--title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.product__details--price {
+  font-size: 1.2rem;
+  background-color: green;
+  color: #fff;
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+.product--description {
+  margin-top: 1rem;
+}

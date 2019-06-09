@@ -1,6 +1,6 @@
 
 .container {
-  padding: 1rem;
+  padding: 0;
 }
 
 .grid{
@@ -11,7 +11,7 @@
   flex: 1 0 26%;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .search-box {
@@ -26,34 +26,33 @@ input[type=text] {
 }
 
 .list-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 1rem;
 }
 
 @media (min-width: 320px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
   .grid{
+    max-width: 100%;
     width: 100%;
-    flex-basis: 50%;
+    padding: 0;
   }
 }
-@media (min-width: 425px) { /* smartphones, Android phones, landscape iPhone */
-  .grid{
+@media (min-width: 425px) { /* smartphones, Android phones, landscape iPhone */}
 
-    flex-basis: 50%;
-  }
-}
 @media (min-width: 600px) {
   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
   .grid {
-    max-width: 80%;
+    max-width: 90%;
+    width: 90%;
   }
 
 }
-@media (min-width: 801px) {
+@media (min-width: 1024px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
   .grid {
-    max-width: 100%;
+    max-width: 80%;
+    width: 80%;
   }
 
 }
@@ -62,7 +61,7 @@ input[type=text] {
 
   .grid {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1300px;
     flex-basis: 50%;
   }
 

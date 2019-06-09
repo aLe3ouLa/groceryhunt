@@ -19,7 +19,8 @@ export class ProductListItemComponent implements OnInit {
     const width = window.innerWidth;
 
     if (this.isMobile(width) || this.isTablet(width)) {
-     this.navigateToView(product.productId);
+      console.log(product);
+     this.navigateToView(product.product_id);
     } else {
      this.navigateToModal(product);
     }

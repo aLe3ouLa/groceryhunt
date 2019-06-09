@@ -7,7 +7,7 @@
   height: 100vh;
   overflow: hidden;
   outline: 0;
-  background-color: rgba(109, 109, 109, 0.5);
+  background-color: rgba(44, 44, 44, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,27 +27,31 @@
   justify-content: space-between;
 }
 
-.product-details {
+.modal__card--link {
+  cursor: pointer;
+}
+
+.modal__product {
   padding: 1rem;
 }
 
-.product-image {
+.modal__product--image {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.product-details-description {
+.modal__product-details{
   display: flex;
   justify-content: space-between;
 }
 
-.product-title {
+.modal__product-details--title {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.product-price {
+.modal__product-details--price {
   font-size: 1.2rem;
   background-color: green;
   color: #fff;
