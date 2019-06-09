@@ -2,10 +2,10 @@
   <div class="modal__card">
     <div class="modal__card--header">
       <h2>Product Details</h2>
-      <a class="modal__card--link" (click)="onClose()">Close</a>
+      <a class="modal__card--link" (click)="onModalClose()">Close</a>
     </div>
     <hr />
-    <div class="modal__product" *ngIf="productSelected">
+    <div class="modal__product" *ngIf="productSelected; else loading">
       <div class="modal__product--image">
         <img src="{{ productSelected.image }}" alt="{{ productSelected.name + 'image' }}" height="200" />
       </div>
@@ -26,5 +26,11 @@
         </div>
       </div>
     </div>
+
+    <ng-template #loading>
+      <div class="loading-image">
+        <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" height="100" />
+      </div>
+    </ng-template>
   </div>
 </div>

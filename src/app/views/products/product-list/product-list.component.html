@@ -14,7 +14,9 @@
     </div>
 
     <ng-template #loading>
-        <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" height="100">
+      <div class="loading-image">
+        <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" height="100" />
+      </div>
     </ng-template>
 
     <app-product-details-modal *ngIf="modalSelected" [productId]="modalSelected.product_id" (closeModal)="onClosedModal()"></app-product-details-modal>

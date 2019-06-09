@@ -37,3 +37,10 @@
   background-color: rgb(243, 142, 159);
   border-color: rgb(252, 124, 145);
 }
+
+
+.loading-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

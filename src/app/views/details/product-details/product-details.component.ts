@@ -10,26 +10,18 @@ import { ProductService } from 'src/app/services/products.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  private id: string;
   product: Product;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService) { }
+    private productService: ProductService
+  ) {}
 
   ngOnInit() {
-    this.activatedRoute.params
-      .subscribe(
-        (params: Params) => {
-          this.id = params['id'];
-          this.productService.fetchProduct(this.id);
-          this.productService.productsSelected
-            .subscribe(
-              (product: Product) => {
-                this.product = product;
-              }
-            );
-      });
-}
-
+    /** Doesn't require to unsubscribe from Activated route as the router destroys the subscriber whenever its no longer needed */
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.productService.fetchProduct(params['id']);
+      this.productService.productsSelected.subscribe((product: Product) => this.product = product);
+    });
+  }
 }
