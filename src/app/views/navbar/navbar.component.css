@@ -1,0 +1,73 @@
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+}
+
+.navbar-color {
+  background-color: rgb(250, 250, 250);
+  color: #202026;
+  box-shadow: 0 1px 3px #202026;
+}
+
+.navbar-title {
+  display: inline-block;
+  padding: 0.3rem 0;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #202026;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.navbar-title:hover, .navbar-title:focus {
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.navbar-toggler:hover, .navbar-toggler:focus {
+  text-decoration: none;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.navbar-nav .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: rgba(255, 255, 255, 0.75);
+}

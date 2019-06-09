@@ -1,0 +1,21 @@
+<div class="container" >
+    <div class="list-title">
+        <h1>Product List <span *ngIf="products">({{products.length}})</span> </h1>
+    </div>
+    <div class="search-box">
+      <label for="searchBox"></label>
+        <input id="searchBox" name="searchBox" [(ngModel)]="searchText" placeholder="Search for an item..." type="text">
+    </div>
+    <div class="grid" *ngIf="products; else loading">
+        <app-product-list-item
+        *ngFor="let product of products | filter : searchText"
+        [product]="product"
+        (productOpenToModal)="onModalSelected($event)"></app-product-list-item>
+    </div>
+
+    <ng-template #loading>
+        <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="" height="100">
+    </ng-template>
+
+    <app-product-details-modal *ngIf="modalSelected" [productId]="modalSelected.productId" (closeModal)="onClosedModal()"></app-product-details-modal>
+</div>

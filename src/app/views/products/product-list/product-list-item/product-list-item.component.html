@@ -1,0 +1,12 @@
+<div class="product-container gutter" (click)="onProductClick(product)">
+  <div class="product">
+    <img src="{{ product.image }}" alt="" height="100" />
+    <hr />
+    <div class="product__details">
+      <div class="product--title">
+        {{ product.name }}
+      </div>
+      <div class="product-price">{{ product.price }} &euro;</div>
+    </div>
+  </div>
+</div>

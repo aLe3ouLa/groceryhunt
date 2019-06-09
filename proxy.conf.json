@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+      "target": "http://external-domain-you-wanted-to-access",
+      "secure": false,
+      "changeOrigin": true
+  }
+}

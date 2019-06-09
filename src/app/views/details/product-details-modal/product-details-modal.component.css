@@ -1,0 +1,56 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  outline: 0;
+  background-color: rgba(109, 109, 109, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__card {
+  width: 40rem;
+  height: 30rem;
+  border-radius: .5rem;
+  background-color: #fff;
+}
+
+.modal__card--header {
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-details {
+  padding: 1rem;
+}
+
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-details-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  background-color: green;
+  color: #fff;
+  border-radius: .5rem;
+  padding: .5rem;
+}
