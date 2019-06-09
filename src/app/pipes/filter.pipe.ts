@@ -4,12 +4,16 @@ import { Product } from '../models/product.model';
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-  transform(items: Product[], searchText: string): any[] {
-    if(!items) return [];
-    if(!searchText) return items;
+  transform(products: Product[], searchText: string): any[] {
+    if (!products) {
+      return [];
+    }
+    if (!searchText) {
+      return products;
+    }
     searchText = searchText.toLowerCase();
-    return items.filter( it => {
-      return it.name.toLowerCase().includes(searchText);
+    return products.filter(product => {
+      return (product.name).toLowerCase().includes(searchText);
     });
-   }
+  }
 }
