@@ -8,6 +8,7 @@ import { Subject } from 'rxjs';
 export class ProductService {
   products: Product[] = [];
   selectedProduct: Product;
+  private PUBLIC_URL = 'http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/';
 
   productsChanged = new Subject<Product[]>();
   productsSelected = new Subject<Product>();
@@ -17,14 +18,14 @@ export class ProductService {
   /** Fetch all the products from REST api using HTTPClient GET */
   fetchProducts() {
     this.httpClient
-    .get<{products: Product[]}>('http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/list')
+    .get<{products: Product[]}>(this.PUBLIC_URL + 'list')
     .subscribe(data => this.setProducts(data.products));
   }
 
   /** Fetch a product with a specific id from REST api using HTTPClient GET */
   fetchProduct(productId: string) {
     this.httpClient
-    .get<Product>('http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/' + productId + '/detail')
+    .get<Product>(this.PUBLIC_URL + productId + '/detail')
     .subscribe(data => this.setProduct(data));
   }
 

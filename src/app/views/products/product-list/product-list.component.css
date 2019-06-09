@@ -51,8 +51,8 @@ input[type=text] {
 @media (min-width: 1024px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
   .grid {
-    max-width: 80%;
-    width: 80%;
+    max-width: 90%;
+    width: 90%;
   }
 
 }
