@@ -7,29 +7,32 @@ import { Subject } from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class ProductService {
   products: Product[] = [];
-  productsChanged = new Subject<Product[]>();
   selectedProduct: Product;
+
+  productsChanged = new Subject<Product[]>();
   productsSelected = new Subject<Product>();
 
   constructor(private httpClient: HttpClient) {}
 
   fetchProducts() {
-    this.httpClient.get<{products: Product[]}>('http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/list')
-    .subscribe(
-      data => {
-        this.products = data.products;
-        this.productsChanged.next([...this.products]);
-      }
-    );
+    this.httpClient
+    .get<{products: Product[]}>('http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/list')
+    .subscribe(data => this.setProducts(data.products));
   }
 
-  getProduct(id: string) {
-    this.httpClient.get('http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/' + id + "/detail")
-    .subscribe(
-      data => {
-        this.selectedProduct = data as Product;
-        this.productsSelected.next(this.selectedProduct);
-      }
-    );
+  getProduct(productId: string) {
+    this.httpClient
+    .get<Product>('http://s3-eu-west-1.amazonaws.com/developer-application-test/cart/' + productId + '/detail')
+    .subscribe(data => this.setProduct(data));
+  }
+
+  setProducts(products: Product[]) {
+    this.products = products;
+    this.productsChanged.next([...this.products]);
+  }
+
+  setProduct(product: Product) {
+    this.selectedProduct = product;
+    this.productsSelected.next(this.selectedProduct);
   }
 }
