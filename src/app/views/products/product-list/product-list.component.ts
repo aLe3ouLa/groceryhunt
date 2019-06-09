@@ -18,11 +18,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.productsService.fetchProducts();
     this.subscription = this.productsService.productsChanged
-      .subscribe(
-        (products: Product[]) => {
-          this.products = products;
-        }
-      );
+      .subscribe((products: Product[]) =>  this.products = products);
   }
 
   onModalSelected(event: {product_id: string, name: string, price: string, image: string}) {
