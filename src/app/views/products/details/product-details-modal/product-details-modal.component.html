@@ -21,9 +21,12 @@
 
       <div class="modal__product--description">
         <h3>Description</h3>
-        <div>
+        <div *ngIf="productSelected?.description; else noDescription">
           {{ productSelected.description }}
         </div>
+        <ng-template #noDescription>
+          <p>No description found</p>
+        </ng-template>
       </div>
     </div>
 

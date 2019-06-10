@@ -23,7 +23,10 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     /** Doesn't require to unsubscribe from Activated route as the router destroys the subscriber whenever its no longer needed */
     this.activatedRoute.params.subscribe((params: Params) => {
       this.productService.fetchProduct(params['id']);
-      this.subscription =  this.productService.productsSelected.subscribe((product: Product) => this.product = product);
+      this.subscription =  this.productService.productsSelected.subscribe((product: Product) => {
+        console.log(product);
+        this.product = product;
+      });
     });
   }
 

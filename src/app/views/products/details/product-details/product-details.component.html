@@ -16,9 +16,13 @@
 
   <div class="product--description">
     <h3>Description:</h3>
-    <div class="product-description">
+    <div class="product-description" *ngIf="product?.description; else noDescription">
       {{ product.description }}
     </div>
+
+    <ng-template #noDescription>
+      <p>No description found</p>
+    </ng-template>
   </div>
 </div>
 

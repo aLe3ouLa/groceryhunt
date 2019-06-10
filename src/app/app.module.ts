@@ -7,25 +7,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { NavbarComponent } from './views/navbar/navbar.component';
-import { ProductsComponent } from './views/products/products.component';
-import { ProductListComponent } from './views/products/product-list/product-list.component';
-import { ProductListItemComponent } from './views/products/product-list/product-list-item/product-list-item.component';
-import { FilterPipe } from './pipes/filter.pipe';
-import { ProductDetailsComponent } from './views/details/product-details/product-details.component';
-import { ProductDetailsModalComponent } from './views/details/product-details-modal/product-details-modal.component';
 import { HomeComponent } from './views/home/home.component';
+import { ProductsModule } from './views/products/products.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProductsComponent,
-    ProductListComponent,
-    ProductListItemComponent,
-    FilterPipe,
-    ProductDetailsComponent,
-    ProductDetailsModalComponent,
     HomeComponent
   ],
   imports: [
