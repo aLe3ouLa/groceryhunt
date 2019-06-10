@@ -7,11 +7,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 🐥npm install
 🐥ng serve
 
-# Features
-
-[ * ] Home / Landing Page
-[ * ] Product List 
-[ * ] Product details with different interaction for mobile (navigate to seperate view) and desktop (open a popup) users
-[ * ] Lazy loading product modules
-[ * ] Preload feature 
-[ * ] Responsive grid
+**Features**
+- [x] Home / Landing Page
+- [x] Product List 
+- [x] Product details with different interaction for mobile (navigate to seperate view) and desktop (open a popup) users
+- [x] Lazy loading product modules
+- [x] Preload feature
+- [x] Responsive grid
