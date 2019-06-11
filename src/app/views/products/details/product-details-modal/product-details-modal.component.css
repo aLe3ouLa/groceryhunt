@@ -52,8 +52,8 @@
 }
 
 .modal__product-details--price {
-  font-size: 1.2rem;
-  background-color: green;
+  font-size: 1.1rem;
+  background-color: #03a678;
   color: #fff;
   border-radius: .5rem;
   padding: .5rem;

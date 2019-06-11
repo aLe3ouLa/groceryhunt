@@ -11,6 +11,7 @@
   border-radius: 4px;
   padding: .5rem;
   margin: .5rem;
+  cursor: pointer;
 }
 
 .product:hover{
@@ -38,7 +39,7 @@
 
 .product-price {
   font-size: 0.9rem;
-  background-color: green;
+  background-color: #03a678;
   color: #fff;
   border-radius: .5rem;
   padding: .5rem;
@@ -55,6 +56,10 @@
 
   .gutter{
     margin: 0.2rem 0;
+  }
+
+  .product-price{
+    font-size: 0.8rem;
   }
 }
 @media (min-width: 425px) { /* smartphones, Android phones, landscape iPhone */}
@@ -76,6 +81,10 @@
 
   .gutter{
     margin: 1rem .2rem;
+  }
+
+  .product-price{
+    font-size: 1rem;
   }
 
 }
