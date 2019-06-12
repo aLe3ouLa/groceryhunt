@@ -4,6 +4,7 @@
 .product {
   height: 10rem;
   width: 9rem;
+  flex-grow: 1;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -18,9 +19,6 @@
   transform: scale(1.05);
 }
 
-.gutter{
-  margin: 0.5rem 1rem;
-}
 
 .product__details {
   display: flex;
@@ -38,7 +36,7 @@
 }
 
 .product-price {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   background-color: #03a678;
   color: #fff;
   border-radius: .5rem;
@@ -48,57 +46,15 @@
 
 
 
-@media (min-width: 320px) {
-  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-  .product {
-    width: 9rem;
-  }
-
-  .gutter{
-    margin: 0.2rem 0;
-  }
-
-  .product-price{
-    font-size: 0.8rem;
-  }
-}
+@media (min-width: 320px) { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
 @media (min-width: 425px) { /* smartphones, Android phones, landscape iPhone */}
-@media (min-width: 600px) {
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-
-  .gutter{
-    margin: 0.5rem 1rem;
-  }
-}
+@media (min-width: 600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */}
 @media (min-width: 1024px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
-  .product {
-    width: 9rem;
-    height: 9rem;
-    margin: 0;
-    padding:0;
-  }
-
-  .gutter{
-    margin: 1rem .2rem;
-  }
-
-  .product-price{
-    font-size: 1rem;
-  }
-
+  .product { height: 9rem; margin: 0; padding:0; }
+  .product-price{ font-size: 0.9rem; }
 }
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
-  .product {
-    width: 10rem;
-    height: 10rem;
-    padding: .5rem;
-    margin: .5rem;
-  }
-
-  .gutter{
-    margin: 1rem 1rem;
-  }
-
+  .product { width: 10rem; height: 10rem; padding: .5rem; margin: .5rem; }
 }
