@@ -1,12 +1,14 @@
+<!-- START product card -->
 <div *ngIf="product" class="product-container gutter" (click)="onProductClick(product)">
   <div class="product">
     <img src="{{ product.image }}" alt="" height="90" />
     <hr />
+    <!-- START product details -->
     <div class="product__details">
-      <div class="product--title">
-        {{ product.name }}
-      </div>
+      <div class="product--title"> {{ product.name }} </div>
       <div class="product-price">{{ product.price }} &euro;</div>
     </div>
+    <!-- END product details -->
   </div>
 </div>
+<!-- END product card -->

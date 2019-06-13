@@ -1,17 +1,24 @@
 <div class="container" >
+    <!-- START title -->
     <div class="list-title">
         <h1>Product List <span *ngIf="products">({{products.length}})</span> </h1>
     </div>
+    <!-- END title -->
+    <!-- START search box / filter -->
     <div class="search-box">
       <label for="searchBox"></label>
-        <input id="searchBox" name="searchBox" [(ngModel)]="searchText" placeholder="Search for an item..." type="text">
+      <input id="searchBox" name="searchBox" [(ngModel)]="searchText" placeholder="Search for an item..." type="text">
     </div>
+    <!-- END search box / filter -->
+
+    <!-- START grid with product boxes -->
     <div class="grid" *ngIf="products; else loading">
         <app-product-list-item
         *ngFor="let product of products | filter : searchText"
         [product]="product"
         (productOpenToModal)="onModalSelected($event)"></app-product-list-item>
     </div>
+    <!-- END grid with product boxes -->
 
     <ng-template #loading>
       <div class="loading-image">

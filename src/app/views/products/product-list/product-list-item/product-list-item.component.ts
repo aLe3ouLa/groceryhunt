@@ -16,6 +16,7 @@ export class ProductListItemComponent implements OnInit {
   ngOnInit() {}
 
   onProductClick(product: Product): void  {
+    /** Decide the size of the device to have the correct interaction, find the inner width from window object */
     const width = window.innerWidth;
 
     if (this.isMobile(width) || this.isTablet(width)) {
@@ -26,18 +27,22 @@ export class ProductListItemComponent implements OnInit {
   }
 
   isMobile(width: any): boolean {
+    /** Return if the device is mobile */
     return width <= 768;
   }
 
   isTablet(width: any): boolean {
+    /** Return if the device is tablet */
     return width > 768 && width <= 992;
   }
 
   navigateToView(productId: string) {
+    /** Navigate to a seperate view */
     this.router.navigate(['/list/' + productId]);
   }
 
   navigateToModal(product: Product) {
+    /** Navigate to a modal */
     this.productOpenToModal.emit(product);
   }
 

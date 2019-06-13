@@ -16,17 +16,20 @@ export class ProductListComponent implements OnInit, OnDestroy {
   constructor(private productsService: ProductService) { }
 
   ngOnInit() {
+    /** Fetch all products */
     this.productsService.fetchProducts();
     this.subscription = this.productsService.productsChanged
       .subscribe((products: Product[]) =>  this.products = products);
   }
 
   onModalSelected(event: {product_id: string, name: string, price: string, image: string}) {
-    const product = new Product (event.product_id, event.name, event.price, event.image, '');
+    /** Which product is selected for modal */
+    const product = new Product (event.product_id, event.name, event.price, event.image);
     this.modalSelected = product;
   }
 
   onClosedModal() {
+    /** Close modal */
     this.modalSelected = null;
   }
 
