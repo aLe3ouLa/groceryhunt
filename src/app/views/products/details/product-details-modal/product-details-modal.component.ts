@@ -19,16 +19,18 @@ export class ProductDetailsModalComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.productService.fetchProduct(this.productId);
     this.subscription = this.productService.productsSelected.subscribe((product: Product) => {
-      console.log(product);
+      // Fetch the product selected
       this.productSelected = product;
     });
   }
 
   onModalClose() {
+    /* Close the modal */
     this.closeModal.emit(true);
   }
 
   ngOnDestroy() {
+    /** Destroy the subscription to the observable */
     this.subscription.unsubscribe();
   }
 }
