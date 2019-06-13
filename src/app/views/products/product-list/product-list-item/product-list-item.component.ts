@@ -46,4 +46,8 @@ export class ProductListItemComponent implements OnInit {
     this.productOpenToModal.emit(product);
   }
 
+  getPriceAsCents() {
+    return +this.product.price * 0.01;
+  }
+
 }

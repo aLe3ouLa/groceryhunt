@@ -24,6 +24,10 @@ export class ProductDetailsModalComponent implements OnInit, OnDestroy {
     });
   }
 
+  getPriceAsCents() {
+    return +this.productSelected.price * 0.01;
+  }
+
   onModalClose() {
     /* Close the modal */
     this.closeModal.emit(true);

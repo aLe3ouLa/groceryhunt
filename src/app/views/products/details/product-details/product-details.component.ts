@@ -30,7 +30,13 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     });
   }
 
+  getPriceAsCents() {
+    return +this.product.price * 0.01;
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+
 }
